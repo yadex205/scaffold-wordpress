@@ -16,6 +16,23 @@ services:
     volumes:
       - db-socket:/usr/local/mysqld
 
+  app:
+    build: ./docker/app
+    depends_on:
+      - db
+      - db-init
+    volumes:
+      - db-socket:/usr/local/mysqld
+      - app-htdocs:/usr/local/site
+      - app-socket:/run/php-fpm
+    network_mode: host
+    environment:
+      - WP_ADMIN_USER=user
+      - WP_ADMIN_PASS=pass
+      - WP_SITE_TITLE="website title"
+      - WP_SITE_DESCRIPTION="website description"
+
 volumes:
   db-data:
   db-socket:
+  app-htdocs:
