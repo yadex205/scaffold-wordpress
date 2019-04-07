@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  db:
+    build: ./docker/db
+    ports:
+      - "33060:3306"
+    volumes:
+      - db-socket:/run/mysqld
+      - db-data:/var/db/mysql
+
+  db-init:
+    build: ./docker/db-init
+    depends_on:
+      - db
+    volumes:
+      - db-socket:/usr/local/mysqld
+
+volumes:
+  db-data:
+  db-socket:
