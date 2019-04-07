@@ -1,0 +1,9 @@
+{
+  "name": "wordpress-scaffold",
+  "version": "0.0.0",
+  "description": "A scaffold project for WordPress based site development",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Kanon Kakuno <yadex205@outlook.jp>",
+  "license": "MIT"
+}
