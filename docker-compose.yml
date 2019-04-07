@@ -32,7 +32,20 @@ services:
       - WP_SITE_TITLE="website title"
       - WP_SITE_DESCRIPTION="website description"
 
+  web:
+    build: ./docker/web
+    depends_on:
+      - db
+      - db-init
+      - app
+    ports:
+      - "8000:8000"
+    volumes:
+      - app-htdocs:/usr/local/site
+      - app-socket:/run/php-fpm
+
 volumes:
   db-data:
   db-socket:
   app-htdocs:
+  app-socket:
