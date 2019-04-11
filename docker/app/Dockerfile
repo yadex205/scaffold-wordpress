@@ -1,10 +1,12 @@
 FROM alpine:3.9
 
 RUN apk add --no-cache \
+  less \
   curl \
   nginx \
-  php php-phar php-fpm php-mysqli php-pdo_mysql\
-  php-json php-curl php-openssl php-xml php-mbstring php-opcache \
+  php \
+  php-phar php-fpm php-mysqli php-pdo_mysql php-opcache \
+  php-tokenizer php-ctype php-json php-curl php-openssl php-xml php-mbstring \
   mariadb-client \
   rsync
 
