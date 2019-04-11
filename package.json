@@ -3,7 +3,35 @@
   "version": "0.0.0",
   "description": "A scaffold project for WordPress based site development",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack"
+  },
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadex205/scaffold-wordpress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yadex205/scaffold-wordpress/issues"
+  },
+  "homepage": "https://github.com/yadex205/scaffold-wordpress#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^5.0.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.11.0",
+    "node-sass-glob-importer": "^5.3.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-log": "^2.0.0",
+    "webpack-merge": "^4.2.1"
+  }
 }
