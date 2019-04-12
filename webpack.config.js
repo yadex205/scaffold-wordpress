@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const DockerCopyWebpackPlugin = require('./lib/docker-copy-webpack-plugin');
+const ScaffoldWordpressCopyWebpackPlugin = require('./lib/scaffold-wordpress-copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const autoprefixer = require('autoprefixer');
@@ -21,11 +21,7 @@ module.exports = [
       filename: 'app.js'
     },
     plugins: [
-      new DockerCopyWebpackPlugin({
-        serviceName: 'app',
-        src: './dist/sample-theme/',
-        dest: '/usr/local/site/wp-content/themes'
-      }),
+      new ScaffoldWordpressCopyWebpackPlugin({ type: 'theme' }),
       new MiniCssExtractPlugin({
         filename: 'style.css'
       }),
@@ -80,11 +76,7 @@ module.exports = [
       filename: 'app.js'
     },
     plugins: [
-      new DockerCopyWebpackPlugin({
-        serviceName: 'app',
-        src: './dist/sample-plugin/',
-        dest: '/usr/local/site/wp-content/plugins'
-      }),
+      new ScaffoldWordpressCopyWebpackPlugin({ type: 'plugin' }),
       new MiniCssExtractPlugin({
         filename: 'style.css'
       }),
