@@ -2,13 +2,12 @@
   "name": "wordpress-scaffold",
   "version": "0.0.0",
   "description": "A scaffold project for WordPress based site development",
-  "main": "index.js",
-  "scripts": {
-    "bootstrap": "jake wordpress:bootstrap",
-    "build": "cross-env NODE_ENV=production webpack"
-  },
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
   "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yadex205/scaffold-wordpress.git"
@@ -17,6 +16,10 @@
     "url": "https://github.com/yadex205/scaffold-wordpress/issues"
   },
   "homepage": "https://github.com/yadex205/scaffold-wordpress#readme",
+  "scripts": {
+    "bootstrap": "jake wordpress:bootstrap",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
